@@ -1,0 +1,297 @@
+<div class="panel-body edit_outer">
+	<div role="tabpanel" class="tab-pane"
+		style="width: 95%; margin: 0 auto;">
+		<form role="form">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-4 col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>品&nbsp;&nbsp;名 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control" placeholder="产品名称"
+									name="productName" value = "{{row.name}}" data-matcher="^\S{2,30}$"
+									title="长度[2,30] | 不允许空格" disabled />
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<span class="glyphicon glyphicon-asterisk"
+									style='line-height: 34px; padding-left: 5px;'></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4  col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>编&nbsp;&nbsp;号 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control" placeholder="产品编号"
+									name="productNumber" value = "{{row.number}}" data-matcher="^\S{2,40}$"
+									title="长度[2,40] | 不允许空格" disabled/>
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<span class="glyphicon glyphicon-asterisk"
+									style='line-height: 34px; padding-left: 5px;'></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>状&nbsp;&nbsp;态 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<select class="form-control productStatus wasChecked" disabled>
+									<option value="供货">供货</option>
+									<option value="断货">断货</option>
+									<option value="停产">停产</option>
+								</select>
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<!--  <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>-->
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="col-md-4 col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>颜&nbsp;&nbsp;色 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control" placeholder="颜色"
+									name="productColor" value = "{{row.color}}" data-matcher="^\S{2,30}$"
+									title="长度[2,30] | 不允许空格" disabled />
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<span class="glyphicon glyphicon-asterisk"
+									style='line-height: 34px; padding-left: 5px;'></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4  col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>风&nbsp;&nbsp;格 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control" placeholder="产品风格"
+									name="productStyle"  value = "{{row.style}}" data-matcher="^\S{2,40}$"
+									title="长度[2,40] | 不允许空格" disabled/>
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<span class="glyphicon glyphicon-asterisk"
+									style='line-height: 34px; padding-left: 5px;'></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>种&nbsp;&nbsp;类 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control" placeholder="服装种类"
+									name="productKind"   value = "{{row.kind}}" data-matcher="^\S{2,40}$"
+									title="长度[2,40] | 不允许空格" disabled/>
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<span class="glyphicon glyphicon-asterisk"
+									style='line-height: 34px; padding-left: 5px;'></span>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+
+				<div class="row">
+					<div class="col-md-4 col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>尺&nbsp;&nbsp;码 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control" placeholder="尺码"
+									name="productSize"  value = "{{row.size}}" data-matcher="^\S{2,20}$"
+									title="长度[2,20] | 不允许空格" disabled/>
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<span class="glyphicon glyphicon-asterisk"
+									style='line-height: 34px; padding-left: 5px;'></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4  col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>材&nbsp;&nbsp;质 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control" placeholder="材质"
+									name="productMaterial"   value = "{{row.material}}" data-matcher="^\S{2,50}$"
+									title="长度[2,50] | 不允许空格" disabled/>
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<span class="glyphicon glyphicon-asterisk"
+									style='line-height: 34px; padding-left: 5px;'></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>产&nbsp;&nbsp;地 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control" placeholder="产地"
+									name="productCO"  value = "{{row.co}}" data-matcher="^\S{2,40}$"
+									title="长度[2,40] | 不允许空格" disabled/>
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<span class="glyphicon glyphicon-asterisk"
+									style='line-height: 34px; padding-left: 5px;'></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="row">
+					<div class="col-md-4 col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>标&nbsp;准1 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control" value = "{{row.productStandard}}" placeholder="执行标准"
+									name="productStandard" disabled/>
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<!--<span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>  -->
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4  col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>标&nbsp;准2 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control"  value = "{{row.safetyStandard}}" placeholder="安全标准"
+									name="safetyStandard" disabled/>
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<!-- <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>  -->
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>等&nbsp;&nbsp;级 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control" placeholder="等级"
+									name="productLevel" disabled/>
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<!--<span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>  -->
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+
+				<div class="row">
+					<div class="col-md-4 col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>数&nbsp;&nbsp;量 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control" placeholder="采购数量"
+									name="inNumber" value = "{{row.inNumber}}" data-matcher="^\d{1,5}$" title="长度[1,5],并且为数字" disabled/>
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<span class="glyphicon glyphicon-asterisk"
+									style='line-height: 34px; padding-left: 5px;'></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4  col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>单&nbsp;&nbsp;价 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control" placeholder="单价"
+									name="unitPrice" value = "{{row.unitPrice}}"  disabled data-scope="[1,9999]" title="单价范围为[1,9999]" />
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<span class="glyphicon glyphicon-asterisk"
+									style='line-height: 34px; padding-left: 5px;'></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>总&nbsp;&nbsp;价 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control" placeholder="总价"
+									name="totalPrice" data-scope="[1,9999999]"
+									title="总价价范围为[1,9999999]" value = "{{row.totalPrice}}" disabled/>
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<span class="glyphicon glyphicon-asterisk"
+									style='line-height: 34px; padding-left: 5px;'></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4 col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>采购人 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control" placeholder="采购人"
+									name="purchasingAgent" data-matcher="^\S{2,40}$"
+									title="长度为[2,40] | 不允许空格" value = "{{row.purchasingAgent}}" disabled/>
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<span class="glyphicon glyphicon-asterisk"
+									style='line-height: 34px; padding-left: 5px;'></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8  col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-1 col-xs-3">
+								<label style='line-height: 34px;'>其&nbsp;&nbsp;他 :</label>
+							</div>
+							<div class="col-md-10 col-xs-8">
+								<input type="text" class="form-control" placeholder="备注"
+									name="description"  value = "{{row.description}}" disabled/>
+							</div>
+							<div class="col-md-1 col-xs-1">
+								<!--<span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

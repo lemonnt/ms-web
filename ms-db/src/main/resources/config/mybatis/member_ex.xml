@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member_ex">
+	   <resultMap id="msMember" type="com.lemonnt.ms.member.bean.MemberBasicInformation">
+			<result property="userName" column="NAME" />
+			<result property="alias" column="ALIAS" />
+			<result property="gender" column="GENDER" />
+			<result property="cellphoneNumber" column="CELLPHONE" />
+			<result property="email" column="EMAIL" />
+			<result property="expression" column="EXPRESS" />
+			<result property="prefession" column="PREFESSION" />
+			<result property="educationBackground" column="EDUCATION" />
+			<result property="income" column="INCOME" />
+			<result property="height" column="HEIGHT" />
+			<result property="weight" column="WEIGHT" />
+			<result property="age" column="AGE" />
+			<result property="address" column="ADDRESS" />
+			<result property="province" column="PROVINCE" />
+			<result property="city" column="CITY" />
+			<result property="area" column="AREA" />
+			<result property="createdDate" column="CREATEDDATE" />
+			<result property="description" column="DESCRIPTION" />
+			<result property="birthday" column="BIRTHDAY" />
+			<result property="score" column="SCORE" />
+			<result property="level" column="LEVEL" />
+			<result property="id" column="ID" />
+			<result property="platform" column="PLATFORM" />
+		</resultMap>
+		
+		<resultMap id="memberProduct" type="com.lemonnt.ms.member.bean.ProductInformation">
+		    <result property="id" column="ID" />
+			<result property="name" column="NAME" />
+			<result property="brand" column="BRAND" />
+			<result property="platform" column="PLATFORM" />
+			<result property="kind" column="KIND" />
+			<result property="size" column="SIZE" />
+			<result property="style" column="STYLE" />
+			<result property="price" column="PRICE" />
+			<result property="color" column="COLOR" />
+			<result property="purchaseDate" column="PURCHASEDATE" />
+			<result property="cellphoneNumber" column="CELLPHONE" />
+			<result property="expressNumber" column="EXPRESSNUMBER" />
+			<result property="expressName" column="EXPRESSNAME" />
+			<result property="purchaseShop" column="PURCHASESHOP" />
+			<result property="status" column="STATUS" />
+			<result property="comments" column="COMMENTS" />
+			<result property="address" column="ADDRESS" />
+			<result property="commentReason" column="COMMENTREASON" />
+			<result property="description" column="DESCRIPTION" />
+			<result property="province" column="PROVINCE" />
+			<result property="city" column="CITY" />
+			<result property="area" column="AREA" />
+			<result property="productNumber" column="PRODUCTNUMBER" />
+        </resultMap>
+
+
+		<resultMap id="product" type="com.lemonnt.ms.product.bean.Products">
+			<result property="name" column="NAME" />
+			<result property="number" column="NUMBER" />
+			<result property="inprice" column="INPRICE" />
+			<result property="outprice" column="OUTPRICE" />
+			<result property="supplier" column="FROM" />	
+			<result property="status" column="STATUS" />
+			<result property="start" column="START" />
+			<result property="end" column="END" />
+			<result property="createDate" column="CREATEDATE" />	
+			<result property="brand" column="BRAND" />	
+			<result property="kind" column="KIND" />	
+			<result property="style" column="STYLE" />	
+			<result property="color" column="COLOR" />	
+			<result property="size" column="SIZE" />	
+        </resultMap>
+        
+        <resultMap id="express" type="com.lemonnt.ms.member.bean.Express">
+			<result property="name" column="NAME" />		
+        </resultMap>
+        
+        
+    <!-- 查询用户，这里应该要返回偏好语言 -->
+	<select id="qryMemberID" 					
+		resultType="java.lang.Long">						
+		<![CDATA[
+		SELECT LAST_INSERT_ID()]]>
+	</select>
+	
+	    <!-- 查询用户，这里应该要返回偏好语言 -->
+	<select id="checkMemberIsExist" parameterType="com.lemonnt.ms.member.bean.MemberBasicInformation"				
+		resultType="java.lang.Integer">						
+		<![CDATA[
+		SELECT count(*) FROM member where CELLPHONE=#{cellphoneNumber} and NAME=#{userName}]]>
+	</select>
+    <!-- 添加会员信息 -->
+	<insert id="insertMember" parameterType="com.lemonnt.ms.member.bean.MemberBasicInformation">
+		<![CDATA[
+		   insert into member(
+		        ID
+                ,NAME
+				,ALIAS
+				,GENDER
+				,CELLPHONE
+				,EMAIL
+				,EXPRESS
+				,PREFESSION
+				,EDUCATION
+				,INCOME
+				,HEIGHT
+				,WEIGHT
+				,AGE
+				,ADDRESS
+				,CREATEDDATE
+				,DESCRIPTION
+				,BIRTHDAY
+				,SCORE
+		        ,LEVEL
+		        ,PROVINCE
+		        ,CITY
+		        ,AREA
+		       ,PLATFORM
+	       ) values(
+	             #{id,jdbcType=VARCHAR}
+				,#{userName,jdbcType=VARCHAR}
+				,#{alias,jdbcType=VARCHAR}
+				,#{gender,jdbcType=VARCHAR}
+				,#{cellphoneNumber,jdbcType=VARCHAR}
+				,#{email,jdbcType=VARCHAR}
+				,#{expression,jdbcType=VARCHAR}
+				,#{prefession,jdbcType=VARCHAR}
+				,#{educationBackground,jdbcType=VARCHAR}
+				,#{income,jdbcType=VARCHAR}
+				,#{height,jdbcType=NUMERIC}
+				,#{weight,jdbcType=NUMERIC}
+				,#{age,jdbcType=NUMERIC}
+				,#{address,jdbcType=VARCHAR}
+				,#{createdDate,jdbcType=TIMESTAMP}
+				,#{description,jdbcType=VARCHAR}
+				,#{birthday,jdbcType=TIMESTAMP}
+				,#{score,jdbcType=NUMERIC}
+				,#{level,jdbcType=VARCHAR}
+				,#{province,jdbcType=VARCHAR}
+				,#{city,jdbcType=VARCHAR}
+				,#{area,jdbcType=VARCHAR}
+				,#{platform,jdbcType=VARCHAR}
+				
+		)
+		]]>
+	</insert>
+	
+	
+	    <!-- 添加会员购买产品的信息 -->
+	<insert id="insertmemberProducts" parameterType="com.lemonnt.ms.member.bean.ProductInformation">
+		<![CDATA[
+		   insert into member_products(
+						 NAME
+						,BRAND
+						,PLATFORM
+						,KIND
+						,SIZE
+						,STYLE
+						,PRICE
+						,COLOR
+						,PURCHASEDATE
+						,CELLPHONE
+						,EXPRESSNUMBER
+						,EXPRESSNAME
+						,PURCHASESHOP
+						,STATUS
+						,COMMENTS
+						,ADDRESS 
+						,COMMENTREASON
+						,DESCRIPTION
+						,MEMBERID
+						,PROVINCE
+		                ,CITY
+		                ,AREA
+		                ,PRODUCTNUMBER
+						)values(
+						 #{name,jdbcType=VARCHAR}
+						,#{brand,jdbcType=VARCHAR}
+						,#{platform,jdbcType=VARCHAR}
+						,#{kind,jdbcType=VARCHAR}
+						,#{size,jdbcType=VARCHAR}
+						,#{style,jdbcType=VARCHAR}
+						,#{price,jdbcType=NUMERIC}
+						,#{color,jdbcType=VARCHAR}
+						,#{purchaseDate,jdbcType=TIMESTAMP}
+						,#{cellphoneNumber,jdbcType=VARCHAR}
+						,#{expressNumber,jdbcType=VARCHAR}
+						,#{expressName,jdbcType=VARCHAR}
+						,#{purchaseShop,jdbcType=VARCHAR}
+						,#{status,jdbcType=VARCHAR}
+						,#{comments,jdbcType=VARCHAR}
+						,#{address,jdbcType=VARCHAR}
+						,#{commentReason,jdbcType=VARCHAR}
+						,#{description,jdbcType=VARCHAR}
+						,#{memberId,jdbcType=VARCHAR}
+					    ,#{province,jdbcType=VARCHAR}
+						,#{city,jdbcType=VARCHAR}
+						,#{area,jdbcType=VARCHAR}
+						,#{productNumber,jdbcType=VARCHAR}
+					)
+		]]>
+	</insert>
+    
+    <!-- 快递 -->
+	<select id="qryExpress"			
+		resultMap="express">						
+		<![CDATA[
+		SELECT name FROM express order by id]]>
+	</select>
+	
+	<!-- 产品名称 -->
+	<select id="qryProductName"			
+		resultMap="product">						
+		<![CDATA[
+		   SELECT distinct name FROM product where status = '供货' order by id
+		]]>
+	</select>
+    
+    <!-- 产品 -->
+	<select id="qryProduct"			
+		resultMap="product">						
+		<![CDATA[
+		SELECT * FROM product ]]> 
+		
+		<if test="name !=null and number == null">
+			where name = #{name} and status = '供货' order by id
+		</if>
+		
+		<if test="number !=null and name !=  null">
+			where name = #{name} and number = #{number} and status = '供货' order by id
+		</if>
+		
+		<if test="number !=null and name !=  null and brand != null">
+			where name = #{name} and number = #{number} and brand = #{brand} and status = '供货' order by id
+		</if>
+
+	</select>
+	
+	<!-- 用户信息 -->
+	<select id="qryMember" parameterType="com.lemonnt.ms.member.bean.MemberQueryParameters" 		
+		resultMap="msMember" >						
+		<![CDATA[
+		   SELECT * from member m where m.CREATEDDATE between #{startDate} and #{endDate}  
+		]]>
+        
+		<if test="search !=null ">
+			and ${search}
+		</if>
+		
+		<if test="sort !=null ">
+			order by ${sort} LIMIT #{from},#{to}
+		</if>
+	</select>
+	
+	<!-- 用户总条数 -->
+	<select id="qryMemberTotal" parameterType="com.lemonnt.ms.member.bean.MemberQueryParameters" 		
+		resultType="java.lang.Integer" >						
+			<![CDATA[
+		   SELECT count(*) from member m where m.CREATEDDATE between #{startDate} and #{endDate} 
+		]]>
+        
+		<if test="search !=null ">
+			and ${search}
+		</if>
+		
+		<if test="sort !=null ">
+			order by ${sort}
+		</if>
+	</select>
+	
+	
+	
+	<!-- 产品名称 -->
+	<select id="qryMemberProduct" parameterType="hashmap" 		
+		resultMap="memberProduct" >						
+		<![CDATA[
+		   SELECT * from member_products where memberid = #{memberid}
+		]]>
+	</select>
+
+    <!-- 删除会员 -->
+	<delete id="delMember" parameterType="hashmap" >						
+		<![CDATA[
+		   delete from member where id in (${id})
+		]]>
+	</delete>
+	
+	 <!-- 删除会员时删除的产品 -->
+	<delete id="delMemberProduct" parameterType="hashmap">						
+		<![CDATA[
+		   delete from member_products where memberid in (${id})
+		]]>
+	</delete>
+	
+	<!-- 删除会员 -->
+	<delete id="delProduct" parameterType="hashmap">						
+		<![CDATA[
+		   delete from member_products where id = #{id}
+		]]>
+	</delete>
+
+   
+</mapper>

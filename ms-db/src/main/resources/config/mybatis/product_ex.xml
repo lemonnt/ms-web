@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="product_ex">
+	  
+
+		<resultMap id="product" type="com.lemonnt.ms.product.bean.Products">
+			<result property="name" column="NAME" />
+			<result property="number" column="NUMBER" />
+			<result property="inprice" column="INPRICE" />
+			<result property="outprice" column="OUTPRICE" />
+			<result property="supplier" column="FROM" />	
+			<result property="status" column="STATUS" />
+			<result property="start" column="START" />
+			<result property="end" column="END" />
+			<result property="createDate" column="CREATEDATE" />	
+			<result property="brand" column="BRAND" />	
+			<result property="kind" column="KIND" />	
+			<result property="style" column="STYLE" />	
+			<result property="color" column="COLOR" />	
+			<result property="size" column="SIZE" />	
+        </resultMap>
+        
+       
+    <!-- 添加会员信息 -->
+	<insert id="insertProduct" parameterType="com.lemonnt.ms.product.bean.Products">
+		<![CDATA[
+		   insert into product(
+                NAME
+				,number
+				,GENDER
+				,CELLPHONE
+				,EMAIL
+				,EXPRESS
+				,PREFESSION
+				,EDUCATION
+				,INCOME
+				,HEIGHT
+				,WEIGHT
+				,AGE
+				,ADDRESS
+				,CREATEDDATE
+				,DESCRIPTION
+				,BIRTHDAY
+				,SCORE
+		        ,LEVEL
+		        ,PROVINCE
+		        ,CITY
+		        ,AREA
+		       ,PLATFORM
+	       ) values(
+	             #{id,jdbcType=VARCHAR}
+				,#{userName,jdbcType=VARCHAR}
+				,#{alias,jdbcType=VARCHAR}
+				,#{gender,jdbcType=VARCHAR}
+				,#{cellphoneNumber,jdbcType=VARCHAR}
+				,#{email,jdbcType=VARCHAR}
+				,#{expression,jdbcType=VARCHAR}
+				,#{prefession,jdbcType=VARCHAR}
+				,#{educationBackground,jdbcType=VARCHAR}
+				,#{income,jdbcType=VARCHAR}
+				,#{height,jdbcType=NUMERIC}
+				,#{weight,jdbcType=NUMERIC}
+				,#{age,jdbcType=NUMERIC}
+				,#{address,jdbcType=VARCHAR}
+				,#{createdDate,jdbcType=TIMESTAMP}
+				,#{description,jdbcType=VARCHAR}
+				,#{birthday,jdbcType=TIMESTAMP}
+				,#{score,jdbcType=NUMERIC}
+				,#{level,jdbcType=VARCHAR}
+				,#{province,jdbcType=VARCHAR}
+				,#{city,jdbcType=VARCHAR}
+				,#{area,jdbcType=VARCHAR}
+				,#{platform,jdbcType=VARCHAR}
+				
+		)
+		]]>
+	</insert>
+	
+	<!-- 检查供应商是否重复 -->
+	<select id="checkSupplier" parameterType="com.lemonnt.ms.product.bean.Supplier" resultType="java.lang.Integer">
+		<![CDATA[
+		
+		  select count(*) from SUPPLIER where NAME = #{name} and BRAND = #{brand}
+		]]>
+			
+	</select>
+	
+		<!-- 更新采购的产品上架的状态update PROCUREMENT_PRODUCTS p set p.ISINSALED = 1,p.INNUMBER = 0 where p.ID = #{id}-->
+	<update id="setStatusInSaleForProcurement" parameterType="hashmap">
+		<![CDATA[
+		 update PROCUREMENT_PRODUCTS p set p.ISINSALED = 1 where p.ID = #{id}
+		  
+		]]>
+			
+	</update>
+	
+	
+	
+		<!-- 删除供应商-->
+	<delete id="deleteSupplier" parameterType="hashmap">
+		<![CDATA[		
+		  delete from SUPPLIER where ID in (${id})
+		]]>
+			
+	</delete>
+	
+		 <!-- 删除会员时删除的产品 -->
+	<delete id="deleteSupplierProduct" parameterType="hashmap">						
+		<![CDATA[
+		   delete from PROCUREMENT_PRODUCTS where SUPPLIERID in (${id})
+		]]>
+	</delete>
+	
+	<delete id="deleteOnlySupplierProduct" parameterType="hashmap">						
+		<![CDATA[
+		   delete from PROCUREMENT_PRODUCTS where ID in (${id})
+		]]>
+	</delete>
+	
+		<!-- 删除已经上架的产品-->
+	<delete id="deleteInsaleProduct" parameterType="hashmap">
+		<![CDATA[		
+		  delete from INSALE_PRODUCTS where ID in (${id})
+		]]>
+			
+	</delete>
+	
+	<select id="showSupplier" parameterType="com.lemonnt.ms.product.bean.ProductParameters" resultType="com.lemonnt.ms.product.bean.Supplier">
+		<![CDATA[
+		
+		  select * from SUPPLIER s where s.PROCUREMENTDATE between #{startDate} and #{endDate}  
+		]]>
+		
+		<if test="search !=null ">
+			and ${search}
+		</if>
+		
+		<if test="sort !=null ">
+			order by ${sort} LIMIT #{from},#{to}
+		</if>
+			
+	</select>
+
+	
+	<select id="showSupplierTotal" parameterType="com.lemonnt.ms.product.bean.ProductParameters" resultType="java.lang.Integer">
+		<![CDATA[
+		
+		  select count(*) from SUPPLIER s where s.PROCUREMENTDATE between #{startDate} and #{endDate}  
+		]]>
+		
+		<if test="search !=null ">
+			and ${search}
+		</if>
+		
+		<if test="sort !=null ">
+			order by ${sort}
+		</if>
+			
+	</select>
+	
+	<select id="showAllSupplierProductTotal" parameterType="com.lemonnt.ms.product.bean.ProductParameters" resultType="java.lang.Integer">
+		<![CDATA[
+		
+		  select count(*) from PROCUREMENT_PRODUCTS s where s.PROCUREMENTDATE between #{startDate} and #{endDate}  
+		]]>
+		
+		<if test="search !=null ">
+			and ${search}
+		</if>
+		
+		<if test="sort !=null ">
+			order by ${sort}
+		</if>
+			
+	</select>
+	
+	<select id="showAllSupplierProduct" parameterType="com.lemonnt.ms.product.bean.ProductParameters" resultType="com.lemonnt.ms.product.bean.ProcurementProducts">
+		<![CDATA[
+		
+		  select * from PROCUREMENT_PRODUCTS s where s.PROCUREMENTDATE between #{startDate} and #{endDate}  
+		]]>
+		
+		<if test="search !=null ">
+			and ${search}
+		</if>
+		
+		<if test="sort !=null ">
+			order by ${sort}
+		</if>
+			
+	</select>
+	
+		
+	<select id="showSupplierProduct" parameterType="com.lemonnt.ms.product.bean.ProductParameters" resultType="com.lemonnt.ms.product.bean.ProcurementProducts">
+		<![CDATA[
+		
+		  select * from PROCUREMENT_PRODUCTS s where s.SUPPLIERID = #{supplierId}
+		]]>
+		
+		<if test="search !=null ">
+			and ${search}
+		</if>
+		
+		<if test="sort !=null ">
+			order by ${sort} LIMIT #{from},#{to}
+		</if>
+			
+	</select>
+	
+	<select id="showSupplierProductTotal" parameterType="com.lemonnt.ms.product.bean.ProductParameters" resultType="java.lang.Integer">
+		<![CDATA[
+		
+		  select count(*) from PROCUREMENT_PRODUCTS s where s.SUPPLIERID = #{supplierId}
+		]]>
+		
+		<if test="search !=null ">
+			and ${search}
+		</if>
+		
+		<if test="sort !=null ">
+			order by ${sort}
+		</if>
+			
+	</select>
+	
+	<select id="showInsaleProduct" parameterType="com.lemonnt.ms.product.bean.ProductParameters" resultType="com.lemonnt.ms.product.bean.InsaleProducts">
+		<![CDATA[
+		
+		  select * from INSALE_PRODUCTS s where s.CREATEDATE between #{startDate} and #{endDate}  
+		]]>
+		
+		<if test="search !=null ">
+			and ${search}
+		</if>
+		
+		<if test="sort !=null ">
+			order by ${sort} LIMIT #{from},#{to}
+		</if>
+			
+	</select>
+	
+	<select id="showInsaleProductTotalNumber" parameterType="com.lemonnt.ms.product.bean.ProductParameters" resultType="java.lang.Integer">
+		<![CDATA[
+		
+		  select count(*) from INSALE_PRODUCTS s where s.CREATEDATE between #{startDate} and #{endDate}  
+		]]>
+		
+		<if test="search !=null ">
+			and ${search}
+		</if>
+		
+		<if test="sort !=null ">
+			order by ${sort} LIMIT #{from},#{to}
+		</if>
+			
+	</select>
+	
+	<!-- 添加supplier -->
+	<insert id="insertSupplier" parameterType="com.lemonnt.ms.product.bean.Supplier">
+		<![CDATA[
+		insert into SUPPLIER(
+		ID,
+		NAME,
+		BRAND,
+        CONTACT,
+		ADDRESS,
+		LEVEL,
+		DESCRIPTION,
+		NUMBER,
+		CREATEDATE,
+		PROCUREMENTDATE,
+		UPDATEPEOPLE
+		)values(
+		#{id,jdbcType=VARCHAR},
+		#{name,jdbcType=VARCHAR},
+		#{brand,jdbcType=VARCHAR},
+		#{contact,jdbcType=VARCHAR},
+		#{address,jdbcType=VARCHAR},
+		#{level,jdbcType=VARCHAR},
+		#{description,jdbcType=VARCHAR},
+		#{number,jdbcType=NUMERIC},
+		#{createDate,jdbcType=TIMESTAMP},
+		#{procurementDate,jdbcType=TIMESTAMP},
+		#{updatePeople,jdbcType=VARCHAR}
+		
+		)
+		]]>
+	</insert>
+	
+	
+		<!-- 更新supplier-->
+	<update id="updateSupplier" parameterType="com.lemonnt.ms.product.bean.Supplier">
+		<![CDATA[
+		
+		  update SUPPLIER p set 
+		  p.NAME = #{name,jdbcType=VARCHAR},
+		  p.BRAND = #{brand,jdbcType=VARCHAR},
+		  p.CONTACT = #{contact,jdbcType=VARCHAR},
+		  p.ADDRESS = #{address,jdbcType=VARCHAR},
+		  p.LEVEL = #{level,jdbcType=VARCHAR},
+		  p.DESCRIPTION = #{description,jdbcType=VARCHAR},
+		  p.UPDATEPEOPLE = #{updatePeople,jdbcType=VARCHAR}
+		  where p.ID =  #{id,jdbcType=VARCHAR}
+		]]>
+			
+	</update>
+	
+			<!-- 更新supplierProduct-->
+	<update id="updateSupplierProduct" parameterType="com.lemonnt.ms.product.bean.ProcurementProducts">
+		<![CDATA[	
+		  update PROCUREMENT_PRODUCTS p set 
+		  p.NAME = #{name,jdbcType=VARCHAR},
+		  p.NUMBER = #{number,jdbcType=VARCHAR},
+		  p.PRODUCTSTATUS = #{productStatus,jdbcType=VARCHAR},
+		  p.COLOR = #{color,jdbcType=VARCHAR},
+		  p.STYLE = #{style,jdbcType=VARCHAR},
+		  p.KIND = #{kind,jdbcType=VARCHAR},
+		  p.SIZE = #{size,jdbcType=VARCHAR},
+		  p.MATERIAL = #{material,jdbcType=VARCHAR},
+		  p.CO = #{co,jdbcType=VARCHAR},
+		  p.PRODUCTSTANDARD = #{productStandard,jdbcType=VARCHAR},		  
+		  p.SAFETYSTANDARD = #{safetyStandard,jdbcType=VARCHAR},
+		  p.LEVEL = #{level,jdbcType=VARCHAR},
+		  p.INNUMBER = #{inNumber,jdbcType=NUMERIC},
+		  p.UNITPRICE = #{unitPrice,jdbcType=NUMERIC},
+		  p.TOTALPRICE = #{totalPrice,jdbcType=NUMERIC},		  
+		  p.PURCHASINGAGENT = #{purchasingAgent,jdbcType=VARCHAR},		  
+		  p.DESCRIPTION = #{description,jdbcType=VARCHAR},
+		  p.STATUS = #{status,jdbcType=NUMERIC},
+		  p.UPDATEPEOPLE = #{updatePeople,jdbcType=VARCHAR}
+		  where p.ID =  #{id,jdbcType=VARCHAR}
+		]]>
+			
+	</update>
+	
+	<!-- 添加采购产品信息 -->
+	<insert id="insertSupplierProduct" parameterType="com.lemonnt.ms.product.bean.ProcurementProducts">
+		<![CDATA[
+		insert into PROCUREMENT_PRODUCTS(
+		    ID,
+			NAME,
+			NUMBER,
+			PRODUCTSTATUS,
+			COLOR ,
+			STYLE ,
+			KIND,	  
+			SIZE,
+			MATERIAL,
+			CO  ,
+			PRODUCTSTANDARD,
+			SAFETYSTANDARD ,
+			LEVEL          ,	  
+			INNUMBER,
+			UNITPRICE,
+			TOTALPRICE,
+			PURCHASINGAGENT,
+			DESCRIPTION,
+			SUPPLIERID,
+			CREATEDATE,
+			PROCUREMENTDATE,
+		    PROCUREMENTTYPE,
+		    UPDATEPEOPLE
+			)values(
+			 #{id,jdbcType=VARCHAR}
+			,#{name,jdbcType=VARCHAR}
+			,#{number,jdbcType=VARCHAR}
+			,#{productStatus,jdbcType=VARCHAR}
+			,#{color,jdbcType=VARCHAR}
+			,#{style,jdbcType=VARCHAR}
+			,#{kind,jdbcType=VARCHAR}
+			,#{size,jdbcType=VARCHAR}
+			,#{material,jdbcType=VARCHAR}
+			,#{co,jdbcType=VARCHAR}
+			,#{productStandard,jdbcType=VARCHAR}
+			,#{safetyStandard,jdbcType=VARCHAR}
+			,#{level,jdbcType=VARCHAR}
+			,#{inNumber,jdbcType=NUMERIC}
+			,#{unitPrice,jdbcType=NUMERIC}
+			,#{totalPrice,jdbcType=NUMERIC}
+			,#{purchasingAgent,jdbcType=VARCHAR}
+			,#{description,jdbcType=VARCHAR}
+			,#{supplierId,jdbcType=VARCHAR}
+			,#{createDate,jdbcType=TIMESTAMP}
+			,#{procurementDate,jdbcType=TIMESTAMP}
+			,#{procurementType,jdbcType=NUMERIC}
+			,#{updatePeople,jdbcType=VARCHAR}				
+			)
+		]]>
+	</insert>
+	
+	
+	<!-- 添加采购产品信息 -->
+	<insert id="insertSupplierAssistantProduct" parameterType="com.lemonnt.ms.product.bean.ProcurementAssistantProducts">
+		<![CDATA[
+		
+		insert into PROCUREMENT_PRODUCTS(
+		    ID,
+			NAME,
+			NUMBER,
+			COLOR ,  
+			INNUMBER,
+			UNITPRICE,
+			TOTALPRICE,
+			PURCHASINGAGENT,
+			DESCRIPTION,
+			SUPPLIERID,
+			CREATEDATE,
+			PROCUREMENTDATE,
+		    PROCUREMENTTYPE,
+		    UPDATEPEOPLE
+			)values(
+			 #{id,jdbcType=VARCHAR}
+			,#{name,jdbcType=VARCHAR}
+			,#{number,jdbcType=VARCHAR}
+			,#{color,jdbcType=VARCHAR}
+			,#{inNumber,jdbcType=NUMERIC}
+			,#{unitPrice,jdbcType=NUMERIC}
+			,#{totalPrice,jdbcType=NUMERIC}
+			,#{purchasingAgent,jdbcType=VARCHAR}
+			,#{description,jdbcType=VARCHAR}
+			,#{supplierId,jdbcType=VARCHAR}
+			,#{createDate,jdbcType=TIMESTAMP}
+			,#{procurementDate,jdbcType=TIMESTAMP}
+			,#{procurementType,jdbcType=NUMERIC}
+			,#{updatePeople,jdbcType=VARCHAR}				
+			)
+
+		]]>
+	</insert>
+	
+	
+	<!-- 添加采购产品信息 -->
+	<insert id="insertInsaleProduct" parameterType="com.lemonnt.ms.product.bean.InsaleProducts">
+		<![CDATA[
+		insert into INSALE_PRODUCTS(
+			NAME,
+			NUMBER,
+			COLOR ,
+			STYLE ,
+			KIND,	  
+			SIZE,
+			MATERIAL,
+			CO  ,
+			PRODUCTSTANDARD,
+			SAFETYSTANDARD ,
+			ALLINVENTORY,
+            SALED,
+            INVENTORY,       
+            BRANDPRICE,
+            DISCOUNTPERCENT,
+            SALEPRICE,
+            WHERETOSALE,
+			PURCHASINGAGENT,
+			DESCRIPTION,
+			PRODUCTID,
+			CREATEDATE,
+			BRAND,
+			UPDATEPEOPLE,
+			LEVEL
+			)values(
+			 #{name,jdbcType=VARCHAR}
+			,#{number,jdbcType=VARCHAR}
+			,#{color,jdbcType=VARCHAR}
+			,#{style,jdbcType=VARCHAR}
+			,#{kind,jdbcType=VARCHAR}
+			,#{size,jdbcType=VARCHAR}
+			,#{material,jdbcType=VARCHAR}
+			,#{co,jdbcType=VARCHAR}
+			,#{productStandard,jdbcType=VARCHAR}
+			,#{safetyStandard,jdbcType=VARCHAR}		
+			,#{allInventory,jdbcType=VARCHAR}
+			,#{saled,jdbcType=NUMERIC}
+			,#{inventory,jdbcType=NUMERIC}
+			,#{brandPrice,jdbcType=NUMERIC}
+			,#{discountPercent,jdbcType=VARCHAR}
+			,#{salePrice,jdbcType=NUMERIC}	
+			,#{whereToSale,jdbcType=VARCHAR}		
+			,#{purchasingAgent,jdbcType=VARCHAR}
+			,#{description,jdbcType=VARCHAR}
+			,#{productId,jdbcType=VARCHAR}
+			,#{createDate,jdbcType=TIMESTAMP}
+			,#{brand,jdbcType=VARCHAR}
+			,#{updatePeople,jdbcType=VARCHAR}
+			,#{level,jdbcType=VARCHAR}
+			)
+		]]>
+	</insert>
+	
+				<!-- 更新supplierProduct-->
+	<update id="updateInsaleProduct" parameterType="com.lemonnt.ms.product.bean.InsaleProducts">
+		<![CDATA[				
+		  update INSALE_PRODUCTS p set 
+		  p.NAME = #{name,jdbcType=VARCHAR},
+		  p.NUMBER = #{number,jdbcType=VARCHAR},
+		  p.STATUS = #{status,jdbcType=NUMERIC},
+		  p.COLOR = #{color,jdbcType=VARCHAR},
+		  p.STYLE = #{style,jdbcType=VARCHAR},
+		  p.KIND = #{kind,jdbcType=VARCHAR},
+		  p.SIZE = #{size,jdbcType=VARCHAR},
+		  p.MATERIAL = #{material,jdbcType=VARCHAR},
+		  p.CO = #{co,jdbcType=VARCHAR},
+		  p.PRODUCTSTANDARD = #{productStandard,jdbcType=VARCHAR},		  
+		  p.SAFETYSTANDARD = #{safetyStandard,jdbcType=VARCHAR},
+		  p.LEVEL = #{level,jdbcType=VARCHAR},
+		  p.ALLINVENTORY = #{allInventory,jdbcType=NUMERIC},
+		  p.SALED = #{saled,jdbcType=NUMERIC},
+		  p.INVENTORY = #{inventory,jdbcType=NUMERIC},
+		  p.BRANDPRICE = #{brandPrice,jdbcType=NUMERIC},
+		  p.DISCOUNTPERCENT = #{discountPercent,jdbcType=NUMERIC},
+		  p.SALEPRICE = #{salePrice,jdbcType=NUMERIC},	
+		  p.PURCHASINGAGENT = #{purchasingAgent,jdbcType=VARCHAR},		  
+		  p.DESCRIPTION = #{description,jdbcType=VARCHAR},
+		  p.UPDATEPEOPLE = #{updatePeople,jdbcType=VARCHAR},
+		  p.WHERETOSALE = #{whereToSale,jdbcType=VARCHAR}	  
+		  where p.ID =  #{id,jdbcType=VARCHAR}
+		]]>
+			
+	</update>
+	
+
+</mapper>

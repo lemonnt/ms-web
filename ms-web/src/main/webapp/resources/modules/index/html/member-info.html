@@ -1,0 +1,36 @@
+<section> 
+   <div id="memeberManagement" class="row" style="background:white;"> 
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"> 
+     <div class="panel panel-success"> 
+      <div class="panel-heading" role="tab"> 
+       <h3 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree"> <strong>会员信息</strong> </a> </h3> 
+      </div> 
+      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne"> 
+       <div class="panel-body"> 
+        <!-- 时间查询控件 --> 
+        <div role="tabpanel" class="tab-pane" id="memberInformationDatePlugin"> 
+         <div class="panel-body"> 
+          <div class="col-xs-4 col-xs-offset-4"> 
+           <div class="input-group"> 
+            <span class="input-group-addon">查询日期 ：</span> 
+            <input id="startDate" type="text" class="form-control" /> 
+            <span class="input-group-addon">-</span> 
+            <input id="endDate" type="text" class="form-control" /> 
+           </div> 
+          </div> 
+          <div class="col-xs-1"> 
+           <button id="queryMemberInformations" class="btn btn-default"><span>查询</span></button> 
+          </div> 
+         </div> 
+        </div> 
+        <!-- 时间查询控件 --> 
+        <div role="tabpanel" class="tab-pane" id="memberTables"> 
+         <table id="memberInformationsForTable" class="table table-bordered table-striped"> 
+         </table> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </section> 

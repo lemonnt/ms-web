@@ -1,0 +1,117 @@
+
+         <form role="form" id = "memberContent"> 
+      
+          <div class="container-fluid"> 
+           <div class="row"  style="width:90%;margin:0 auto;"> 
+            <div class="col-md-5 col-xs-12 form-group"> 
+             <label>姓名 : </label> 
+             <input type="text" disabled class="form-control input_8" placeholder="name" value = "{{member.userName}}" name="name" data-length="80" /> 
+             <span class="glyphicon glyphicon-asterisk"></span> 
+            </div> 
+            <div class="col-md-4  col-xs-12 form-group"> 
+             <label>昵称 : </label> 
+             <input type="text" class="form-control input_8" disabled placeholder="alias" name="alias" data-length="100" value="{{member.alias}}"/> 
+             <span class="glyphicon glyphicon-asterisk"></span> 
+            </div> 
+            <div class="col-md-3  col-xs-12"> 
+             <label>性别 : </label> 
+             <select class="form-control input_7 gender" disabled> <option>保密</option> <option>男</option> <option>女</option> </select> 
+            </div> 
+            <br />
+            <br />
+            <br /> 
+            <div class="col-md-5 col-xs-12 form-group"> 
+             <label>手机 : </label> 
+             <input type="text" disabled class="form-control input_8" placeholder="cellphone" name="cellphone" value="{{member.cellphoneNumber}}"/> 
+             <span class="glyphicon glyphicon-asterisk"></span> 
+            </div> 
+            <div class="col-md-4  col-xs-12 form-group"> 
+             <label>邮箱 : </label> 
+             <input type="text" disabled class="form-control input_8" placeholder="email" name="email" data-length="100" value="{{member.email}}"/> 
+            </div> 
+            <div class="col-md-3  col-xs-12"> 
+             <label>快递 : </label> 
+             <select class="form-control input_7 express" disabled> </select> 
+            </div> 
+            <br />
+            <br />
+            <br /> 
+            <div class="col-md-5 col-xs-12 form-group"> 
+             <label>职业 : </label> 
+             <input type="text" disabled class="form-control input_8" placeholder="profession" name="profession" data-length="50" value="{{member.prefession}}"/> 
+            </div> 
+            <div class="col-md-4  col-xs-12"> 
+             <label>学历 : </label> 
+             <select class="form-control input_8 backgroundeducation" disabled> <option>保密</option> <option>初中</option> <option>高中</option> <option>本科</option> <option>研究生</option> <option>博士生</option> </select> 
+            </div> 
+            <div class="col-md-3  col-xs-12"> 
+             <label>收入 : </label> 
+             <select class="form-control input_7 income" disabled> <option>保密</option> <option>0-2000</option> <option>2001-4000</option> <option>4001-6000</option> <option>6001-10000</option> <option>10001-20000</option> <option>20001+</option> </select> 
+            </div> 
+            <br />
+            <br />
+            <br /> 
+            <div class="col-md-5 col-xs-12 form-group"> 
+             <label>身高 : </label> 
+             <input type="text" class="form-control input_8" disabled placeholder="单位(cm)" name="height" data-type="number" data-length="300" value="{{member.height}}"/> 
+            </div> 
+            <div class="col-md-4  col-xs-12"> 
+             <label>生日 : </label> 
+             <input id="memberBirthday" type="text" disabled class="form-control input_8 memberBirthday" placeholder="birthday" name="birthday" value="{{member.birthday}}"/> 
+             <!--  <input type="text" class="form-control input_8" placeholder="birthday" name="weight">--> 
+            </div> 
+            <div class="col-md-3  col-xs-12 form-group"> 
+             <label>年龄 : </label> 
+             <input type="text" class="form-control input_7" disabled placeholder="age" name="age" data-type="number" data-length="200" value="{{member.age}}"/> 
+            </div> 
+            <br />
+            <br />
+            <br /> 
+            <div class="col-md-5  col-xs-12 form-group"> 
+             <label>体重 : </label> 
+             <input type="text" class="form-control input_8" disabled placeholder="单位(kg)" name="weight" data-type="number" data-length="500" value="{{member.weight}}"/> 
+            </div> 
+            <div class="col-md-4 col-xs-12"> 
+             <!--  <label>积分  : </label>
+		                                                           <input type="text" class="form-control input_8" placeholder="score" name="score" data-type = "number" data-length="9999999">--> 
+             <label>平台 : </label> 
+             <select class="form-control input_8 platform" disabled> <option>淘宝</option> <option>天猫</option>  <option>实体店</option><option>速卖通</option> <option>钱宝</option> <option>京东</option> <option>苏宁</option> <option>亚马逊</option> <option>微信</option> <option>其他</option> </select> 
+            </div> 
+            <div class="col-md-3  col-xs-12"> 
+             <label>等级 : </label> 
+             <select class="form-control input_7 level" disabled> <option>一星客户</option> <option>二星客户</option> <option>三星客户</option> <option>四星客户</option> <option>五星客户</option> <option>绿钻客户</option> <option>蓝钻客户</option> <option>黄钻客户</option> </select> 
+            </div> 
+            <br />
+            <br />
+            <br /> 
+            <div data-toggle="distpicker" class="col-md-12 col-xs-12 form-group distpicker"> 
+             <label>地址 : </label> 
+             <select class="form-control input_2 province" disabled></select> 
+             <select class="form-control input_2 city" disabled></select> 
+             <select class="form-control input_2 area" disabled></select> 
+             <input type="text" class="form-control input_other_3_2" disabled placeholder="Detail address" name="address" data-length="300" value="{{member.address}}"/> 
+             <span class="glyphicon glyphicon-asterisk"></span> 
+            </div> 
+            <br />
+            <br />
+            <br /> 
+            <div class="col-md-12 col-xs-12 form-group"> 
+             <label style="padding-top:25px;">其他描述&nbsp;:</label> 
+             <textarea class="form-control input_9 description" disabled rows="3" data-type="description" data-length="500">{{member.description}}</textarea> 
+            </div> 
+            <br />
+            <br />
+            <br /> 
+            <br />
+            <br />
+            <br /> 
+            <!--
+            <div class="col-md-12 col-xs-12"> 
+             <button type="button" class="btn btn-default resetbtn" style="margin-left:42%;">重置</button> 
+             <button type="button" class="btn btn-default submitbtn" style="margin-left:3%;">提交</button> 
+             <button type="button" class="btn btn-default continueAddProductMsgbtn" style="margin-left:42%;display:none;">继续添加产品</button> 
+            </div>   -->
+           </div> 
+          </div> 
+         </form>
+  

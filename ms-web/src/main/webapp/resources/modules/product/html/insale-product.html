@@ -1,0 +1,330 @@
+ <div id="_insale_insaleProduct" role="tabpanel" class="tab-pane" style="width:95%;margin:0 auto;" data-status=false>
+                  <form role="form">
+                   <div class="container-fluid">
+                   
+                   
+                   <div class="row">
+                        <div class="col-md-4 col-xs-12 form-group">
+                          <div class="row">
+                              <div class="col-md-2 col-xs-3">
+	                             <label style='line-height:34px;'>品&nbsp;&nbsp;名 :</label>
+	                          </div>
+	                          <div class="col-md-8 col-xs-8">
+	                             <input type="text" class="form-control" placeholder="产品名称" name="productName" value="{{product.name}}" data-matcher="^\S{2,30}$" title="长度[2,30] | 不允许空格"/>
+	                          </div>
+	                          <div class="col-md-2 col-xs-1">
+	                             <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>
+	                          </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4  col-xs-12 form-group">
+	                        <div class="row">
+	                              <div class="col-md-2 col-xs-3">
+		                             <label style='line-height:34px;'>编&nbsp;&nbsp;号 :</label>
+		                          </div>
+		                          <div class="col-md-8 col-xs-8">
+		                             <input type="text" class="form-control" placeholder="产品编号" value="YW-10001-*" name="productNumber" data-matcher="^\S{2,40}$" title="长度[2,40] | 不允许空格"/>
+		                          </div>
+		                          <div class="col-md-2 col-xs-1">
+		                             <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>
+		                          </div>
+	                          </div>
+	                     </div>
+                        <div class="col-md-4 col-xs-12 form-group"> 
+				           <div class="row">
+	                              <div class="col-md-2 col-xs-3">
+		                             <label style='line-height:34px;'>品&nbsp;&nbsp;牌 :</label>
+		                          </div>
+		                          <div class="col-md-8 col-xs-8">
+		                             <input type="text" class="form-control" placeholder="品牌名称" value="雅戈维尼" name="productBrand" data-matcher="^\S{2,64}$" title="长度[2,64] | 不允许空格"/>		     
+		                          </div>
+		                          <div class="col-md-2 col-xs-1">
+		                             <!--  <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>-->
+		                          </div>
+	                          </div>
+				        </div> 
+                      </div>
+                      
+                      
+                      <div class="row">
+                        <div class="col-md-4 col-xs-12 form-group">
+                          <div class="row">
+                              <div class="col-md-2 col-xs-3">
+	                             <label style='line-height:34px;'>颜&nbsp;&nbsp;色 :</label>
+	                          </div>
+	                          <div class="col-md-8 col-xs-8">
+	                             <input type="text" class="form-control" placeholder="颜色" name="productColor" value="{{product.color}}" data-matcher="^\S{2,30}$" title="长度[2,30] | 不允许空格"/>
+	                          </div>
+	                          <div class="col-md-2 col-xs-1">
+	                             <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>
+	                          </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4  col-xs-12 form-group">
+	                        <div class="row">
+	                              <div class="col-md-2 col-xs-3">
+		                             <label style='line-height:34px;'>风&nbsp;&nbsp;格 :</label>
+		                          </div>
+		                          <div class="col-md-8 col-xs-8">
+		                             <input type="text" class="form-control" placeholder="产品风格" name="productStyle" value="{{product.style}}"data-matcher="^\S{2,40}$" title="长度[2,40] | 不允许空格"/>
+		                          </div>
+		                          <div class="col-md-2 col-xs-1">
+		                             <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>
+		                          </div>
+	                          </div>
+	                     </div>
+                        <div class="col-md-4 col-xs-12 form-group"> 
+				           <div class="row">
+	                              <div class="col-md-2 col-xs-3">
+		                             <label style='line-height:34px;'>种&nbsp;&nbsp;类 :</label>
+		                          </div>
+		                          <div class="col-md-8 col-xs-8">
+		                             <input type="text" class="form-control" placeholder="服装种类" name="productKind" value="{{product.kind}}" data-matcher="^\S{2,40}$" title="长度[2,40] | 不允许空格"/>
+		                          </div>
+		                          <div class="col-md-2 col-xs-1">
+		                             <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>
+		                          </div>
+	                          </div>
+				        </div> 
+                        
+                      </div>
+                      
+                      
+                      <div class="row">
+                        <div class="col-md-4 col-xs-12 form-group">
+                          <div class="row">
+                              <div class="col-md-2 col-xs-3">
+	                             <label style='line-height:34px;'>尺&nbsp;&nbsp;码 :</label>
+	                          </div>
+	                          <div class="col-md-8 col-xs-8">
+	                             <input type="text" class="form-control" placeholder="尺码" name="productSize" value="{{product.size}}" data-matcher="^\S{2,20}$" title="长度[2,20] | 不允许空格"/>
+	                          </div>
+	                          <div class="col-md-2 col-xs-1">
+	                             <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>
+	                          </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4  col-xs-12 form-group">
+	                        <div class="row">
+	                              <div class="col-md-2 col-xs-3">
+		                             <label style='line-height:34px;'>材&nbsp;&nbsp;质 :</label>
+		                          </div>
+		                          <div class="col-md-8 col-xs-8">
+		                             <input type="text" class="form-control" placeholder="材质" name="productMaterial" value="{{product.material}}" data-matcher="^\S{2,50}$" title="长度[2,50] | 不允许空格"/>
+		                          </div>
+		                          <div class="col-md-2 col-xs-1">
+		                             <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>
+		                          </div>
+	                          </div>
+	                     </div>
+                        <div class="col-md-4 col-xs-12 form-group"> 
+				           <div class="row">
+	                              <div class="col-md-2 col-xs-3">
+		                             <label style='line-height:34px;'>产&nbsp;&nbsp;地 :</label>
+		                          </div>
+		                          <div class="col-md-8 col-xs-8">
+		                             <input type="text" class="form-control" placeholder="产地" name="productCO" value="{{product.co}}" data-matcher="^\S{2,40}$" title="长度[2,40] | 不允许空格"/>
+		                          </div>
+		                          <div class="col-md-2 col-xs-1">
+		                             <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>
+		                          </div>
+	                          </div>
+				        </div> 
+                      </div>
+
+                      
+                      
+                      <div class="row">
+                        <div class="col-md-4 col-xs-12 form-group">
+                          <div class="row">
+                              <div class="col-md-2 col-xs-3">
+	                             <label style='line-height:34px;'>标准-1 :</label>
+	                          </div>
+	                          <div class="col-md-8 col-xs-8">
+	                             <input type="text" class="form-control" placeholder="执行标准" value="{{product.productStandard}}" name="productStandard"/>
+	                          </div>
+	                          <div class="col-md-2 col-xs-1">
+	                             <!--<span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>  -->
+	                          </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4  col-xs-12 form-group">
+	                        <div class="row">
+	                              <div class="col-md-2 col-xs-3">
+		                             <label style='line-height:34px;'>标准-2 :</label>
+		                          </div>
+		                          <div class="col-md-8 col-xs-8">
+		                             <input type="text" class="form-control" placeholder="安全标准" value="{{product.safetyStandard}}" name="safetyStandard" />
+		                          </div>
+		                          <div class="col-md-2 col-xs-1">
+		                             <!-- <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>  -->
+		                          </div>
+	                          </div>
+	                     </div>
+                        <div class="col-md-4 col-xs-12 form-group"> 
+				           <div class="row">
+	                              <div class="col-md-2 col-xs-3">
+		                             <label style='line-height:34px;'>等&nbsp;&nbsp;级 :</label>
+		                          </div>
+		                          <div class="col-md-8 col-xs-8">
+		                             <input type="text" class="form-control" placeholder="等级" name="productLevel" value="{{product.level}}"/>
+		                          </div>
+		                          <div class="col-md-2 col-xs-1">
+		                             <!--<span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>  -->
+		                          </div>
+	                          </div>
+				        </div> 
+                      </div>
+                      
+                      
+                      
+                       <div class="row">
+                        <div class="col-md-4 col-xs-12 form-group">
+                          <div class="row">
+                              <div class="col-md-2 col-xs-3">
+	                             <label style='line-height:34px;'>总&nbsp;&nbsp;存 :</label>
+	                          </div>
+	                          <div class="col-md-8 col-xs-8">
+	                             <input type="text" class="form-control" placeholder="总共库存数量" name="allInventory" value="{{product.inNumber}}" readonly/>
+	                          </div>
+	                          <div class="col-md-2 col-xs-1">
+	                            <!-- <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span> --> 
+	                          </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4  col-xs-12 form-group">
+	                        <div class="row">
+	                              <div class="col-md-2 col-xs-3">
+		                             <label style='line-height:34px;'>售&nbsp;&nbsp;出 :</label>
+		                          </div>
+		                          <div class="col-md-8 col-xs-8">
+		                             <input type="text" class="form-control" placeholder="售出" name="saled" value = "{{defaultValue.saled}}" readonly/>
+		                          </div>
+		                          <div class="col-md-2 col-xs-1">
+		                            <!-- <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span> --> 
+		                          </div>
+	                          </div>
+	                     </div>
+                        <div class="col-md-4 col-xs-12 form-group"> 
+				           <div class="row">
+	                              <div class="col-md-2 col-xs-3">
+		                             <label style='line-height:34px;'>库&nbsp;&nbsp;存 :</label>
+		                          </div>
+		                          <div class="col-md-8 col-xs-8">
+		                             <input type="text" class="form-control" placeholder="库存数量" name="inventory" value = "{{defaultValue.inventory}}" readonly/>
+		                          </div>
+		                          <div class="col-md-2 col-xs-1">
+		                             <!-- <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span> --> 
+		                          </div>
+	                          </div>
+				        </div> 
+                      </div>
+                      
+                                            
+                      
+                      <div class="row">
+                        <div class="col-md-4 col-xs-12 form-group">
+                          <div class="row">
+                              <div class="col-md-2 col-xs-3">
+	                             <label style='line-height:34px;'>吊牌价 :</label>
+	                          </div>
+	                          <div class="col-md-8 col-xs-8">
+	                             <input type="text" class="form-control" placeholder="吊牌价格" name="brandPrice" value="{{defaultValue.brandPrice}}" data-scope="[1,9999]" title="长度[1,5],并且为数字"/>
+	                          </div>
+	                          <div class="col-md-2 col-xs-1">
+	                             <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>
+	                          </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4  col-xs-12 form-group">
+	                        <div class="row">
+	                              <div class="col-md-2 col-xs-3">
+		                             <label style='line-height:34px;'>折&nbsp;&nbsp;扣 :</label>
+		                          </div>
+		                          <div class="col-md-8 col-xs-8">
+		                             <input type="text" class="form-control" placeholder="折扣比例" name="discountPercent" value="{{defaultValue.discountPercent}}" data-scope="[0,1]" title="折扣范围[0,1]"/>
+		                          </div>
+		                          <div class="col-md-2 col-xs-1">
+		                             <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>
+		                          </div>
+	                          </div>
+	                     </div>
+                        <div class="col-md-4 col-xs-12 form-group"> 
+				           <div class="row">
+	                              <div class="col-md-2 col-xs-3">
+		                             <label style='line-height:34px;'>售&nbsp;&nbsp;价 :</label>
+		                          </div>
+		                          <div class="col-md-8 col-xs-8">
+		                             <input type="text" class="form-control" placeholder="售价" name="salePrice" value="{{defaultValue.salePrice}}" data-scope="[1,9999]" title="售价范围为[1,9999]"/>
+		                          </div>
+		                          <div class="col-md-2 col-xs-1">
+		                             <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>
+		                          </div>
+	                          </div>
+				        </div> 
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-md-4 col-xs-12 form-group">
+                          <div class="row">
+                              <div class="col-md-2 col-xs-3">
+	                             <label style='line-height:34px;'>责任人 :</label>
+	                          </div>
+	                          <div class="col-md-8 col-xs-8">
+	                             <input type="text" class="form-control" placeholder="谁上的货" value= "{{product.purchasingAgent}}" name="purchasingAgent" data-matcher="^\S{2,40}$" title="长度为[2,40] | 不允许空格"/>
+	                          </div>
+	                          <div class="col-md-2 col-xs-1">
+	                             <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>
+	                          </div>
+                          </div>
+                        </div>
+                        <div class="col-md-8  col-xs-12 form-group">
+	                        <div class="row">
+	                              <div class="col-md-1 col-xs-3">
+		                             <label style='line-height:34px;'>其&nbsp;&nbsp;他 :</label>
+		                          </div>
+		                          <div class="col-md-10 col-xs-8">
+		                             <input type="text" class="form-control" placeholder="备注" name="description"/>
+		                          </div>
+		                          <div class="col-md-1 col-xs-1">
+		                              <!--<span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span> -->
+		                          </div>
+	                          </div>
+	                     </div>
+
+                      </div>
+                      
+                      
+                       <div class="row">
+                        <div class="col-md-4 col-xs-12 form-group">
+                          <div class="row">
+                              <div class="col-md-2 col-xs-3">
+	                             <label style='line-height:34px;'>平&nbsp;&nbsp;台 :</label>
+	                          </div>
+	                          <div class="col-md-8 col-xs-8">
+	                              <select class="form-control whereToSale"><option>实体店铺</option><option>电商平台</option></select> 		     
+	                          </div>
+	                          <div class="col-md-2 col-xs-1">
+	                             <!--  <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>-->
+	                          </div>
+                          </div>
+                        </div>
+                        <div class="col-md-8  col-xs-12 form-group">
+	                        <div class="row">
+		                          <div class="col-md-11 col-xs-8">
+		                             <div class="whereToSale2"></div>
+		                          </div>
+		                          <div class="col-md-1 col-xs-1">
+		                              <!--  <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>-->
+		                          </div>
+	                          </div>
+	                     </div>
+
+                      </div>
+                      
+                      
+                      
+                      
+                    </div>
+                  </form>
+                </div>

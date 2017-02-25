@@ -1,0 +1,344 @@
+
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+	 font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+	
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+	position: relative;
+	min-height: 1px;
+	padding-right: 0px !important;
+	padding-left: 0px !important;
+}
+
+/*.row{
+	padding-right: 0px !important;
+	padding-left: 0px !important;
+}
+*/
+.child_menu li:hover{
+	background:#374A5E !important;
+}
+#managementCore{
+	/*background:white !important;*/
+}
+.hoverInColor{
+	background:#374A5E !important;
+}
+
+.hoverOutColor{
+    background:#2A3F54 !important;
+}
+
+#managementCore .pageTab{
+	display:none;
+	
+	
+}
+
+
+#managementCore .pageActive{
+	display:block;
+	
+	
+}
+
+#memeberManagement #accordion,#memeberCreate #accordion,#memeberMarketing #accordion{
+	
+	width:95%;
+	margin:0 auto;
+}
+#memeberManagement #accordion .panel-heading,#memeberCreate #accordion .panel-heading,#memeberMarketing #accordion .panel-heading{
+	background:#66ABAB;
+	border-color:#66ABAB;
+	color:#2A3F54;
+}
+
+#memeberManagement #accordion .panel,#memeberCreate #accordion .panel,#memeberMarketing #accordion .panel{
+	border-color:#66ABAB;
+}
+
+#memeberCreate #accordion:nth-child(1){
+	
+	padding-top:70px;
+}
+
+#memeberManagement #accordion:nth-child(1){
+	padding-top:70px;
+}
+
+#memeberMarketing #accordion:nth-child(1){
+	padding-top:70px;
+}
+
+
+#memeberManagement #accordion:nth-child(2){
+	padding-top:40px;
+}
+
+.activeStatus{
+	display:block;
+}
+
+.inactiveStatus{
+	display:none;
+}
+.form-control{
+	display:inline !important;
+}
+
+
+.form-control.input_1{
+	
+   width:10%;
+   
+}
+
+.form-control.input_2{
+	
+   width:20%;
+   
+}
+
+.form-control.input_3{
+	
+   width:30%;
+   
+}
+
+.form-control.input_other_3_2{
+	
+   width:31.4%;
+   
+}
+
+.form-control.input_4{
+	
+   width:40%;
+   
+}
+
+.form-control.input_5{
+	
+   width:50%;
+   
+}
+
+.form-control.input_6{
+	
+   width:60%;
+   
+}
+
+.form-control.input_7{
+	
+   width:70%;
+   
+}
+
+.form-control.input_8{
+	
+   width:80%;
+   
+}
+
+.form-control.input_9{
+	
+   width:90%;
+   
+}
+
+.form-control.input_other_9_1{
+	
+   width:89.8%;
+   
+}
+
+.form-control.input_10{
+	
+   width:100%;
+   
+}
+
+.glyphicon-asterisk{
+	font-size:9px;
+	color:#FF626F;
+}
+
+table thead tr th{
+	text-align:center;
+	
+}
+.sendMessageSingleRow{
+	margin-top:20px;
+	
+}
+
+#memberTables .icon-refresh,#memberTables .icon-list-alt{
+ line-height:1.42857143 !important;
+}
+
+#memberTables .pull-right .glyphicon{
+	color:#73879C;
+}
+
+#memberTables .pagination-detail a ,#memberTables .pagination-detail span{
+	color:#73879C;
+}
+
+.deleteBtn{
+	margin-top:10px;
+	background:#D9534F;
+	border:1px solid #D9534F;
+	color:white !important;
+}
+
+.sendMsgBtn{
+	margin-top:10px;
+	background:#66ABAB;
+	border:1px solid #66ABAB;
+	color:white !important;
+}
+
+
+.deleteBtn:hover{
+	background:#AA0000;
+	border:1px solid #AA0000;
+	color:white;
+}
+
+.sendMsgBtn:hover{
+	background:#428BCA;
+	border:1px solid #428BCA;
+	color:white;
+}
+
+#memberInformationDatePlugin > .panel-body{
+	margin-top:20px;
+}
+
+#memberInformationDatePlugin .input-group-addon:nth-child(1){
+	font-weight: 700;
+	background-color:transparent;
+	border:none;
+}
+
+#memberInformationDatePlugin input[type=text]{
+	cursor:pointer;
+}
+
+#memberInformationDatePlugin span,#memberInformationDatePlugin input{
+	color:#73879C;
+}
+
+#memberTables {
+	margin-top:20px;
+}
+#memberInformationsForTable{
+	border-top: #66ABAB 4px solid;
+}
+
+#memberInformationsForTable .caret{
+	color:#73879C;
+}
+
+#memberTables .fixed-table-body{
+	height:auto !important;
+}
+
+
+#memberContent  input:disabled{
+	border:0px;
+	outline:none;
+	background:none;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+#memberContent  select:disabled{
+	border:0px;
+	outline:none;
+	background:none;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+     appearance:none;   
+  -moz-appearance:none;   
+  -webkit-appearance:none; 
+}
+#memberContent  textarea:disabled{
+	/*border:0px;*/
+	outline:none;
+	background:none;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+#memberContent span{
+	display:none;
+}
+
+#memeberCreate h3{
+	display:inline;
+}
+
+#memeberCreate #memberCreateTab{
+	float:right;
+}
+
+#memeberCreate .activeStatus{
+	margin-top:30px;
+}
+
+
+#specialTools .panel-success>.panel-heading{
+	background-color:66ABAB;
+	border-color:#66ABAB
+}
+
+#specialTools .panel-heading{
+	padding:0px 0px;
+}
+#specialTools #accordion{
+	width:95%;
+	margin:0 auto;
+}
+
+#specialTools  .navbar-header{
+	background:none !important;
+	color:#2A3F54;
+}
+
+#specialTools .navbar-brand, #memeberCreate .navbar-nav > li > a{
+	color:#2A3F54 !important;
+	font-weight:700;
+	font-size:16px;
+	
+}
+
+ #specialTools .navbar-nav > li > a{
+    font-size:12px !important;
+ }
+ 
+  #specialTools .panel-success .panel-heading a{
+   
+
+ }
+ 
+ .panel-title{
+    padding-top:6px;
+    padding-bottom:7px;
+ 
+ }

@@ -1,0 +1,126 @@
+
+         <form role="form" id = "memberContent"> 
+          <div class="container-fluid" id = "collapseTwo"> 
+           <div class="row"  style="width:90%;margin:0 auto;"> 
+            <div class="col-md-5 col-xs-12"> 
+            <label>名称 : </label> 
+            <select id="productName" class="form-control input_8 productName"> </select> 
+            <!--  <span class="glyphicon glyphicon-asterisk"></span>--> 
+           </div> 
+           <div class="col-md-4  col-xs-12"> 
+            <label>货号 : </label> 
+            <select class="form-control input_8 productNumber"></select> 
+           </div> 
+           <div class="col-md-3  col-xs-12"> 
+            <label>品牌 : </label> 
+            <input type="text" class="form-control input_7" placeholder="brand name" name="brand" data-length="40" /> 
+            <span class="glyphicon glyphicon-asterisk"></span> 
+           </div> 
+           <br />
+           <br />
+           <br /> 
+           <div class="col-md-5 col-xs-12"> 
+            <label>类别 : </label> 
+            <select class="form-control input_8 kind"> <option>男装</option> <option>女装</option> </select> 
+           </div> 
+           <div class="col-md-4  col-xs-12"> 
+            <label>尺寸 : </label> 
+            <select class="form-control input_8 size"> <option>00A</option> </select> 
+            <!-- <input type="text" class="form-control input_8" placeholder="size" name = "size" data-length="20"> --> 
+            <!--  <span class="glyphicon glyphicon-asterisk"></span>--> 
+           </div> 
+           <div class="col-md-3  col-xs-12"> 
+            <label>款式 : </label> 
+            <select class="form-control input_7 style"> <option>修身</option> <option>宽松</option> </select> 
+           </div> 
+           <br />
+           <br />
+           <br /> 
+           <div class="col-md-5 col-xs-12 form-group"> 
+            <label>价格 : </label> 
+            <input type="text" class="form-control input_8" placeholder="price" name="price" data-type="prince" data-length="9999" value = "{{row.price}}" /> 
+            <span class="glyphicon glyphicon-asterisk"></span> 
+           </div> 
+           <div class="col-md-4  col-xs-12"> 
+            <label>颜色 : </label> 
+            <select class="form-control input_8 color"> <option>黑色</option> </select> 
+            <!--  <input type="text" class="form-control input_8" placeholder="color" name = "color" data-length="20">--> 
+            <!--  <span class="glyphicon glyphicon-asterisk"></span>--> 
+           </div> 
+           <div class="col-md-3  col-xs-12"> 
+            <label>日期 : </label> 
+            <input id="purchaseDate" type="text" class="form-control input_7 purchaseDate" placeholder=" purchase Date" name="purchaseDate" value = "{{row.purchaseDate}}" /> 
+            <span class="glyphicon glyphicon-asterisk"></span> 
+           </div> 
+           <br />
+           <br />
+           <br /> 
+           <div class="col-md-5 col-xs-12 form-group"> 
+            <label>手机 : </label> 
+            <input type="text" class="form-control input_8" placeholder="cellphone" name="cellphone" data-type="cellphone" value = "{{row.cellphoneNumber}}"/> 
+            <span class="glyphicon glyphicon-asterisk"></span> 
+           </div> 
+           <div class="col-md-4  col-xs-12 form-group"> 
+            <label>单号 : </label> 
+            <input type="text" class="form-control input_8" placeholder="express number" name="expressNumber" data-length="30" value = "{{row.expressNumber}}"/> 
+            <span class="glyphicon glyphicon-asterisk"></span> 
+           </div> 
+           <div class="col-md-3  col-xs-12"> 
+            <label>快递 : </label> 
+            <select class="form-control input_7 expressName"> </select> 
+           </div> 
+           <br />
+           <br />
+           <br /> 
+           <div class="col-md-2  col-xs-12"> 
+            <label>平台 : </label> 
+            <select class="form-control input_7 platform"> <option>淘宝</option> <option>天猫</option> <option>速卖通</option> <option>钱宝</option> <option>京东</option> <option>苏宁</option> <option>亚马逊</option> <option>微信</option> <option>其他</option> </select> 
+           </div> 
+           <div class="col-md-3 col-xs-12"> 
+            <select class="form-control input_8 shopName"> <option>李先生的店</option> <option>雅戈维尼女装</option> <option>雅戈维尼男装</option> </select> 
+           </div> 
+           <div class="col-md-4  col-xs-12"> 
+            <label>交易 : </label> 
+            <select class="form-control input_8 status"> <option>交易中</option> <option>成功</option> <option>失败</option> </select> 
+           </div> 
+           <div class="col-md-3  col-xs-12"> 
+            <label>评价 : </label> 
+            <select class="form-control input_7 comments"> <option>未评价</option> <option>好评</option> <option>中评</option> <option>差评</option> </select> 
+           </div> 
+           <br />
+           <br />
+           <br /> 
+           <div data-toggle="distpicker" class="col-md-12 col-xs-12 form-group distpicker"> 
+            <label>地址 : </label> 
+            <select class="form-control input_2 province"></select> 
+            <select class="form-control input_2 city"></select> 
+            <select class="form-control input_2 area"></select> 
+            <input type="text" class="form-control input_other_3_2" placeholder="Detail address" name="address" value = "{{row.address}}" data-length="300" /> 
+            <span class="glyphicon glyphicon-asterisk"></span> 
+           </div> 
+           <br />
+           <br />
+           <br /> 
+           <div class="col-md-12 col-xs-12"> 
+            <label style="padding-top:25px;">评价理由&nbsp;:</label> 
+            <textarea class="form-control input_9 commentReason" rows="3" data-length="500">{{row.commentReason}}</textarea> 
+           </div> 
+           <br />
+           <br />
+           <br /> 
+           <br />
+           <br /> 
+           <div class="col-md-12 col-xs-12"> 
+            <label style="padding-top:25px;">其他描述&nbsp;:</label> 
+            <textarea class="form-control input_9 description" rows="3" data-length="500">{{row.description}}</textarea> 
+           </div> 
+           <br />
+           <br />
+           <br /> 
+           <br />
+           <br />
+           <br /> 
+          </div> 
+          </div> 
+         </form>
+  

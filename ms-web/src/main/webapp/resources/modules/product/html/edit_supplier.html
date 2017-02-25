@@ -1,0 +1,131 @@
+
+<div class="panel-body edit_outer">
+	<div role="tabpanel" class="tab-pane"
+		style="width: 95%; margin: 0 auto;">
+		<form role="form">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-4 col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>厂&nbsp;&nbsp;家 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control" placeholder="供应商名称"
+									value="{{row.name}}" name="supplierName"
+									data-matcher="^\S{2,30}$" title="长度[2,30] | 不允许空格" disabled />
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<span class="glyphicon glyphicon-asterisk"
+									style='line-height: 34px; padding-left: 5px;'></span>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="col-md-4  col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>品&nbsp;&nbsp;牌 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control" placeholder="品牌名称"
+									value="{{row.brand}}" name="productBrand"
+									data-matcher="^\S{2,30}$" title="长度[2,30] | 不允许空格" disabled />
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<span class="glyphicon glyphicon-asterisk"
+									style='line-height: 34px; padding-left: 5px;'></span>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="col-md-4 col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>电&nbsp;&nbsp;话 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control" placeholder="联系方式"
+									value="{{row.contact}}" name="contactMethod"
+									data-matcher="^\S{4,40}$" title="长度[4,15] | 不允许空格" disabled />
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<span class="glyphicon glyphicon-asterisk"
+									style='line-height: 34px; padding-left: 5px;'></span>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+
+
+
+
+				<div class="row">
+
+
+					<div class="col-md-4 col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>地&nbsp;&nbsp;址 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control" placeholder="厂家地址"
+									value="{{row.address}}" name="supplierAddress"
+									data-matcher="^\S{2,50}$" title="长度[2,50] | 不允许空格" disabled />
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<span class="glyphicon glyphicon-asterisk"
+									style='line-height: 34px; padding-left: 5px;'></span>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="col-md-4  col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>信&nbsp;&nbsp;誉 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<select class="form-control supplierLevel wasChecked" disabled>
+									<option value="良好">良好</option>
+									<option value="优秀">优秀</option>
+									<option value="合格">合格</option>
+									<option value="黑名单">黑名单</option>
+								</select>
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<!--  <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>-->
+							</div>
+						</div>
+					</div>
+
+
+					<div class="col-md-4 col-xs-12 form-group">
+						<div class="row">
+							<div class="col-md-2 col-xs-3">
+								<label style='line-height: 34px;'>备&nbsp;&nbsp;注 :</label>
+							</div>
+							<div class="col-md-8 col-xs-8">
+								<input type="text" class="form-control"
+									value="{{row.description}}" placeholder="其他说明"
+									name="supplierDescription" disabled />
+							</div>
+							<div class="col-md-2 col-xs-1">
+								<!--<span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>  -->
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+
+
+			</div>
+		</form>
+	</div>
+</div>

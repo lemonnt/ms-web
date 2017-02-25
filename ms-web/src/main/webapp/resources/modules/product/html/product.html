@@ -1,0 +1,258 @@
+<section>
+  <div id="_product_basicProductInformation" class="row" style="background:white;">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-success" id="_product_specialTools">
+        <div class="panel-heading" role="tab">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">产品采购</a></div>
+          <div class="collapse navbar-collapse bs-example-js-navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li id="fat-menu" class="dropdown">
+                <a id="drop3" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">更多
+                  <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                  <li role="presentation">
+                    <a role="menuitem" tabindex="-1" class="readdNewSupplier">产品采购</a></li>
+                  <li role="presentation">
+                    <a role="menuitem" tabindex="-1">Another action</a></li>
+                  <li role="presentation">
+                    <a role="menuitem" tabindex="-1">Something else here</a></li>
+                  <li role="presentation" class="divider"></li>
+                  <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel-group" id="accordion" style="margin-top:30px;">
+        
+        <div class="panel panel-default">
+            <div class="panel-heading" style="background:#F2F2F2">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#_product_collapseOne">
+                  <font style="padding-left:20px">采购类型</font><span class="glyphicon" style='line-height:34px;padding-left:5px;'></span></a>
+              </h4>
+            </div>
+            <div id="_product_collapseBasic" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div role="tabpanel" class="tab-pane" style="width:95%;margin:0 auto;">
+                  <form role="form">
+                    <div class="container-fluid">
+
+                      
+                      <div class="row">
+                         <div class="col-md-4  col-xs-12 form-group">
+	                        <div class="row">
+	                              <div class="col-md-2 col-xs-3">
+		                             <label style='line-height:34px;'>类&nbsp;&nbsp;型  :</label>
+		                          </div>
+		                          <div class="col-md-8 col-xs-8">
+		                              <select class="form-control procurementType">   <option value='0' name="主产品采购">主产品采购</option> <option value='1' name="辅材采购">辅材采购</option> <option value='2' name="其他">其他</option></select> 		     
+		                          </div>
+		                          <div class="col-md-2 col-xs-1">
+		                             <!--  <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>-->
+		                          </div>
+	                          </div>
+	                     </div>
+	                     
+                        <div class="col-md-4 col-xs-12 form-group">
+                          <div class="row">
+                              <div class="col-md-2 col-xs-3">
+	                             <label style='line-height:34px;'>日&nbsp;&nbsp;期 :</label>
+	                          </div>
+	                          <div class="col-md-8 col-xs-8">
+	                             <input id="procurementDate" type="text" class="form-control" name="procurementDate" data-matcher="^\S{10,10}$" title="长度[2,50] | 不允许空格"/>
+	                             <!--  <input type="text" class="form-control" placeholder="厂家地址" name="supplierAddress" data-matcher="^\S{2,50}$" title="长度[2,50] | 不允许空格"/>-->
+	                          </div>
+	                          <div class="col-md-2 col-xs-1">
+	                             <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>
+	                          </div>
+                          </div>
+                        </div>
+                     
+                        <div class="col-md-4 col-xs-12 form-group"> 
+				           <div class="row">
+	                              <div class="col-md-2 col-xs-3">
+		                             <label style='line-height:34px;'>备&nbsp;&nbsp;注 :</label>
+		                          </div>
+		                          <div class="col-md-8 col-xs-8">
+		                             <input type="text" class="form-control" placeholder="其他说明" name="supplierDescription" />
+		                          </div>
+		                          <div class="col-md-2 col-xs-1">
+		                             <!--<span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>  -->
+		                          </div>
+	                          </div>
+				        </div> 
+                        
+                      </div>
+
+                      
+
+
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="panel panel-default"  style="margin-top:20px;">
+            <div class="panel-heading" style="background:#F2F2F2">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#_product_collapseOne">
+                  <font style="padding-left:20px">供应商</font><span class="glyphicon supplierHeader" data-change=false style='line-height:34px;padding-left:5px;'></span></a>
+              </h4>
+            </div>
+            <div id="_product_collapseOne" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div role="tabpanel" class="tab-pane" style="width:95%;margin:0 auto;">
+                  <form role="form">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-md-4 col-xs-12 form-group">
+                          <div class="row">
+                              <div class="col-md-2 col-xs-3">
+	                             <label style='line-height:34px;'>厂&nbsp;&nbsp;家 :</label>
+	                          </div>
+	                          <div class="col-md-8 col-xs-8">
+	                             <input type="text" class="form-control" placeholder="供应商名称" name="supplierName" data-matcher="^\S{2,30}$" title="长度[2,30] | 不允许空格"/>
+	                          </div>
+	                          <div class="col-md-2 col-xs-1">
+	                             <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>
+	                          </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4  col-xs-12 form-group">
+	                        <div class="row">
+	                              <div class="col-md-2 col-xs-3">
+		                             <label style='line-height:34px;'>品&nbsp;&nbsp;牌 :</label>
+		                          </div>
+		                          <div class="col-md-8 col-xs-8">
+		                             <input type="text" class="form-control" placeholder="品牌名称" name="productBrand" data-matcher="^\S{2,30}$" title="长度[2,30] | 不允许空格"/>
+		                          </div>
+		                          <div class="col-md-2 col-xs-1">
+		                             <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>
+		                          </div>
+	                          </div>
+	                     </div>
+                        <div class="col-md-4 col-xs-12 form-group"> 
+				           <div class="row">
+	                              <div class="col-md-2 col-xs-3">
+		                             <label style='line-height:34px;'>电&nbsp;&nbsp;话 :</label>
+		                          </div>
+		                          <div class="col-md-8 col-xs-8">
+		                             <input type="text" class="form-control" placeholder="联系方式" name="contactMethod" data-matcher="^\S{4,40}$" title="长度[4,15] | 不允许空格"/>
+		                          </div>
+		                          <div class="col-md-2 col-xs-1">
+		                             <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>
+		                          </div>
+	                          </div>
+				        </div> 
+                        
+                      </div>
+                      
+                      
+                      <div class="row">
+                        <div class="col-md-4 col-xs-12 form-group">
+                          <div class="row">
+                              <div class="col-md-2 col-xs-3">
+	                             <label style='line-height:34px;'>地&nbsp;&nbsp;址 :</label>
+	                          </div>
+	                          <div class="col-md-8 col-xs-8">
+	                             <input type="text" class="form-control" placeholder="厂家地址" name="supplierAddress" data-matcher="^\S{2,50}$" title="长度[2,50] | 不允许空格"/>
+	                          </div>
+	                          <div class="col-md-2 col-xs-1">
+	                             <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>
+	                          </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4  col-xs-12 form-group">
+	                        <div class="row">
+	                              <div class="col-md-2 col-xs-3">
+		                             <label style='line-height:34px;'>信&nbsp;&nbsp;誉  :</label>
+		                          </div>
+		                          <div class="col-md-8 col-xs-8">
+		                              <select class="form-control supplierLevel wasChecked">   <option>良好</option> <option>优秀</option> <option>合格</option><option>黑名单</option></select> 		     
+		                          </div>
+		                          <div class="col-md-2 col-xs-1">
+		                             <!--  <span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>-->
+		                          </div>
+	                          </div>
+	                     </div>
+                        <div class="col-md-4 col-xs-12 form-group"> 
+				           <div class="row">
+	                              <div class="col-md-2 col-xs-3">
+		                             <label style='line-height:34px;'>备&nbsp;&nbsp;注 :</label>
+		                          </div>
+		                          <div class="col-md-8 col-xs-8">
+		                             <input type="text" class="form-control" placeholder="其他说明" name="supplierDescription" />
+		                          </div>
+		                          <div class="col-md-2 col-xs-1">
+		                             <!--<span class="glyphicon glyphicon-asterisk" style='line-height:34px;padding-left:5px;'></span>  -->
+		                          </div>
+	                          </div>
+				        </div> 
+                        
+                      </div>
+
+                      
+
+
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default" style="margin-top:20px;margin-bottom:30px;">
+            <div class="panel-heading" style="background:#F2F2F2">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#_product_collapseTwo">
+                  <font style="padding-left:20px">基本信息</font></a>
+              </h4>
+            </div>
+            <div id="_product_collapseTwo" class="_product_collapseTwo panel-collapse collapse in" data-supplierid="" data-productid="">
+             
+            </div>
+            
+  
+                    
+                    
+          </div>
+
+<!-- 
+          <div class="panel panel-default" style="margin-top:20px;margin-bottom:50px;">
+            <div class="panel-heading" style="background:#F2F2F2">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#_product_collapseThree">
+                  <font style="padding-left:20px">其他</font></a>
+              </h4>
+            </div>
+            <div id="_product_collapseThree" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div role="tabpanel" class="tab-pane" style="width:95%;margin:0 auto;">
+                  <form role="form">
+                    <div class="container-fluid">
+                      
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+           -->
+  
+                      
+          
+        </div>
+        
+                                                  
+        <div style="margin-bottom:20px;"> 
+			<button type="button" class="btn btn-default _product_resetBtn" style="margin-left:43%;">重置</button> 
+			<button type="button" class="btn btn-default _product_submitBtn" style="margin-left:3%;" data-status = false>提交</button> 
+			 <button type="button" class="btn btn-default _product_continueAddBasicProduct" style="margin-left:43%;display:none;">继续添加产品</button> 	           
+         </div> 
+        <!-- /.nav-collapse --></div>
+      <!-- /.nav-collapse --></div>
+    <!-- /.nav-collapse --></section>

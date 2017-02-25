@@ -1,0 +1,243 @@
+#_product_basicProductInformation {
+	padding-top:80px;
+}
+#_product_basicProductInformation .panel-heading{
+	background:#66ABAB;
+}
+#_product_basicProductInformation  #accordion{
+	width:95%;
+	margin:0 auto;
+}
+
+
+#_product_specialTools .panel-success>.panel-heading{
+	background-color:66ABAB;
+	border-color:#66ABAB
+}
+
+#_product_specialTools .panel-heading{
+	padding:0px 0px;
+}
+#_product_specialTools #accordion{
+	width:95%;
+	margin:0 auto;
+}
+
+#_product_specialTools  .navbar-header{
+	background:none !important;
+	color:#2A3F54;
+}
+
+#_product_specialTools .navbar-brand, #memeberCreate .navbar-nav > li > a{
+	color:#2A3F54 !important;
+	font-weight:700;
+	font-size:16px;
+	
+}
+
+ #_product_specialTools .navbar-nav > li > a{
+    font-size:12px !important;
+    
+ }
+ 
+#_product_basicProductInformation input::-webkit-input-placeholder {
+   font-size:12px !important;
+   color:#CBCBCB !important; 
+}
+
+#_product_basicProductInformation input:-moz-placeholder {
+   font-size:12px !important;
+   color:#CBCBCB !important;
+}
+
+#_product_basicProductInformation input::-moz-placeholder {
+  font-size:12px !important;
+   color:#CBCBCB !important;
+}
+
+#_product_basicProductInformation input:-ms-input-placeholder {
+  font-size:12px !important;
+   color:#CBCBCB !important;
+
+}
+ 
+#_product_basicProductInformation .tooltip-inner{
+   color:red;
+   background-color:white;
+   border:1px solid #FCBF1A;
+ }
+
+#_product_basicProductInformation .tooltip-arrow{
+ 
+	  border-width: 5px 5px 0;
+	  border-top-color:#FCBF1A !important;
+  }
+  
+.displayNone{
+	display:none !important;
+}
+
+.displayBlock{
+	display:block !important;
+}
+
+#_product_collapseOne  input:disabled,#_product_collapseOne  select:disabled{
+	background:none !important;
+}
+
+#_product_basicProductInformation .glyphicon-lock{
+	font-size:11px;
+	color:#FF626F;
+}
+
+.supplierHeader{
+	line-height:0px !important;
+	padding-top:5px;
+}
+
+
+/*###########################insale-product###############################*/
+
+#_modal_productModal input::-webkit-input-placeholder {
+   font-size:12px !important;
+   color:#CBCBCB !important; 
+}
+
+#_product_basicProductInformation input:-moz-placeholder {
+   font-size:12px !important;
+   color:#CBCBCB !important;
+}
+
+#_modal_productModal input::-moz-placeholder {
+  font-size:12px !important;
+   color:#CBCBCB !important;
+}
+
+#_modal_productModal input:-ms-input-placeholder {
+  font-size:12px !important;
+   color:#CBCBCB !important;
+}
+
+#_modal_productModal .whereToSale2{
+	border:1px solid #ccc;
+	border-radius:4px;
+	height:34px;
+	width:100%;
+}
+
+#_product_specialTools{
+ border-color: #66ABAB !important;
+}
+
+#_insale_insaleProduct .tooltip-inner{
+   color:red;
+   background-color:white;
+   border:1px solid #FCBF1A;
+ }
+
+#_insale_insaleProduct .tooltip-arrow{
+ 
+	  border-width: 5px 5px 0;
+	  border-top-color:#FCBF1A !important;
+  }
+  
+#productShowTableOuter{
+	width:97%;
+	margin:0 auto;
+}
+
+#productShowTableOuter .fixed-table-body{
+	height:auto !important;
+}
+ 
+#informationModal_panelBody{
+	padding-bottom:30px;
+ 
+}
+
+/**##############################*/
+#main_procurement_product .tooltip-inner{
+   color:red;
+   background-color:white;
+   border:1px solid #FCBF1A;
+ }
+
+#main_procurement_product .tooltip-arrow{
+ 
+	  border-width: 5px 5px 0;
+	  border-top-color:#FCBF1A !important;
+  }
+  
+ .lineShade{
+   -moz-box-shadow:0px 0px 2px #333333;
+    -webkit-box-shadow:0px 0px 2px #333333;
+    box-shadow:0px 0px 2px #333333;
+    border-radius:4px;
+ }
+ 
+ #information_modal .dropdown-menu{
+  width:8vw;
+ }
+ 
+#information_modal .icon-refresh,#information_modal .icon-list-alt{
+ line-height:1.42857143 !important;
+}
+
+#information_modal .pull-right .glyphicon{
+	color:#73879C;
+}
+
+#information_modal .pagination-detail a ,#information_modal .pagination-detail span{
+	color:#73879C;
+}
+
+.edit_outer input:disabled{
+	border:0px;
+	outline:none;
+	background:none;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.edit_outer  select:disabled{
+	border:0px;
+	outline:none;
+	background:none;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+     appearance:none;   
+  -moz-appearance:none;   
+  -webkit-appearance:none; 
+}
+.edit_outer  textarea:disabled{
+	/*border:0px;*/
+	outline:none;
+	background:none;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+#_modal_productModal .tooltip-inner{
+   color:red;
+   background-color:white;
+   border:1px solid #FCBF1A;
+ }
+
+#_modal_productModal .tooltip-arrow{
+ 
+	  border-width: 5px 5px 0;
+	  border-top-color:#FCBF1A !important;
+  }
+  
+.whereToSale2.disabled{
+	border:0px solid red !important;
+}
